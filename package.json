@@ -64,7 +64,7 @@
     "@layer0/core": "^4.13.9",
     "@layer0/devtools": "^4.13.9",
     "@layer0/prefetch": "^4.13.9",
-    "@layer0/spartacus": "^4.13.9",
+    "@layer0/spartacus": "^4.19.5",
     "@nguniversal/builders": "^10.1.0",
     "@spartacus/schematics": "^3.0.0",
     "@types/express": "^4.17.0",
