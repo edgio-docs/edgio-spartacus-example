@@ -13,23 +13,23 @@ import { AppServerModule } from './src/main.server'
 import { APP_BASE_HREF } from '@angular/common'
 import { existsSync } from 'fs'
 
-// layer0
+// edgio
 import * as http from 'http'
 import * as https from 'https'
-import createRenderCallback from '@layer0/spartacus/server/createRenderCallback'
-import installLayer0Middleware from '@layer0/spartacus/server/installLayer0Middleware'
+import createRenderCallback from '@edgio/spartacus/server/createRenderCallback'
+import installEdgioMiddleware from '@edgio/spartacus/server/installEdgioMiddleware'
 
 const ngExpressEngine = NgExpressEngineDecorator.get(engine)
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
   const server = express()
-  const distFolder = join(process.cwd(), 'dist/layer0-spartacus-example/browser')
+  const distFolder = join(process.cwd(), 'dist/edgio-spartacus-example/browser')
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? 'index.original.html'
     : 'index'
 
-  installLayer0Middleware({ server, http, https })
+  installEdgioMiddleware({ server, http, https })
 
   server.engine(
     'html',
